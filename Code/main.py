@@ -152,7 +152,6 @@ class CheckSits(Screen):
         super().__init__(**kwargs)
         self.next_screen = False
 
-        instr = ScrollLabel(txt_sits, size_hint = (0.3, 1), textcolor='#FFFFFF')
         lbl1 = ScrollLabel('Сделайте 30 приседаний', textcolor='#FFFFFF')
         self.lbl_sits = Sits (30, textcolor='#FFFFFF')
         self.run = Runner(total=30, steptime=1.5, size_hint=(0.4, 1), lcolor=(0.44, 0.44, 0.44, 1))
@@ -162,7 +161,7 @@ class CheckSits(Screen):
         vlay = BoxLayout(orientation='vertical', size_hint=(0.3, 1))
         vlay.add_widget(lbl1)
         vlay.add_widget(self.lbl_sits)
-        line.add_widget(instr)
+        line.add_widget(ScrollLabel(txt_sits, size_hint = (0.3, 1), textcolor='#FFFFFF'))
         line.add_widget(vlay)
         line.add_widget(self.run)
 
@@ -172,7 +171,7 @@ class CheckSits(Screen):
         self.btn.on_press = self.next
 
         outer = BoxLayout(orientation= 'vertical', padding= 8, spacing= 8)
-        outer.add_widget(instr)
+        outer.add_widget(ScrollLabel(txt_sits, size_hint = (0.3, 1), textcolor='#FFFFFF'))
         outer.add_widget(self.btn)
 
         self.add_widget(outer)
@@ -197,7 +196,6 @@ class PulseScr2(Screen):
         self.next_screen = False
         
         self.stage = 0
-        instr = ScrollLabel(txt_test3, textcolor='#FFFFFF')
 
         self.lbl1 = ScrollLabel('Считайте пульс', textcolor='#FFFFFF')
         self.lbl_sec = Seconds(15, textcolor='#FFFFFF') 
@@ -207,7 +205,7 @@ class PulseScr2(Screen):
         vlay = ColoredLayout(orientation='vertical', lcolor=(0.44, 0.44, 0.44, 1))
         vlay.add_widget(self.lbl1)
         vlay.add_widget(self.lbl_sec) 
-        line0.add_widget(instr) 
+        line0.add_widget(ScrollLabel(txt_test3, textcolor='#FFFFFF')) 
         line0.add_widget(vlay)
 
 
@@ -232,7 +230,7 @@ class PulseScr2(Screen):
         self.btn.on_press = self.next
 
         outer = BoxLayout(orientation = 'vertical', padding= 8, spacing= 8)
-        outer.add_widget(instr)
+        outer.add_widget(ScrollLabel(txt_test3, textcolor='#FFFFFF'))
         outer.add_widget(line1)
         outer.add_widget(line2)
         outer.add_widget(self.btn)
